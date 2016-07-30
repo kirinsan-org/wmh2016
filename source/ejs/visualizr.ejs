@@ -31,20 +31,13 @@
     <script type="text/javascript" src="/lib/seriously/effects/seriously.bleach-bypass.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.blend.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.brightness-contrast.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.checkerboard.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.chroma.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.color.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.colorcomplements.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.color-select.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.temperature.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.daltonize.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.dither.js"></script>
+    
+    
     <script type="text/javascript" src="/lib/seriously/effects/seriously.edge.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.emboss.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.exposure.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.falsecolor.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.freeze.js"></script>
-    <script type="text/javascript" src="/lib/seriously/effects/seriously.highlights-shadows.js"></script>
+    
     <script type="text/javascript" src="/lib/seriously/effects/seriously.kaleidoscope.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.lumakey.js"></script>
     <script type="text/javascript" src="/lib/seriously/effects/seriously.fader.js"></script>
@@ -76,6 +69,7 @@
     <script src="/lib/model_pca_20_svm.js"></script>
 
     <script src="/js/main.js"></script>
+    <script src="/lib/wave.js"></script>
 
 </head>
 <body>
@@ -87,7 +81,7 @@
 <canvas id="wave" width="640" height="360" style="width:100%;height:100%;"></canvas>
 <script>
 $(function(){
-    var vis = new Visualizr();
+    window.vis = new Visualizr();
     var wave = new Wave(document.getElementById('wave'));
     wave.start();
 })

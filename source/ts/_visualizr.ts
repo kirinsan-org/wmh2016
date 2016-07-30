@@ -13,6 +13,10 @@ class Visualizr {
   private _ctrack : any;
   private _points: any;
   private faceAngle: any;
+  public HUE: any = null;
+  public note: number = 0;
+  public rms:number = 0;
+  public freq:number = 0;
 
   constructor() {
     this.videoReadyHandle = $.Deferred();
@@ -37,11 +41,11 @@ class Visualizr {
         CTX.strokeStyle = "#FFF";
         //CTX.moveTo(0,0);
         //CTX.lineTo(this._points[41][0],this._points[41][1]);
-        CTX.arc(this._points[41][0],this._points[41][1], 60, 0, Math.PI*2, false)
+        CTX.arc(this._points[41][0],this._points[41][1], this.rms *200, 0, Math.PI*2, false)
         CTX.stroke();
       }
       
-    }, 100);
+    }, 20);
 
     
   }
@@ -85,7 +89,7 @@ class Visualizr {
         this._video.play();
         if (this._video.videoWidth) { resize(); }
         this._video.onloadedmetadata = this._video.onplay = resize;
-        console.log(this.videoReadyHandle);
+        // console.log(this.videoReadyHandle);
         this.videoReadyHandle.resolve();
         SOURCE.source = this._video;
       }, function() {
@@ -116,8 +120,12 @@ class Visualizr {
     NVG.time = 10;
     NVG.luminanceThreshold = 0.2;
 
+    this.HUE = SOL.effect('hue-saturation');
+    this.HUE.source = NVG;
+    this.HUE.hue = 0;
+
     const BLEND = SOL.effect('blend');
-    BLEND.top = NVG;
+    BLEND.top = this.HUE;
     BLEND.bottom = OPF;
     BLEND.opacity = 0.6;
     BLEND.mode = "screen";
