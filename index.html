@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,body {
+            margin:0;
+            padding:0;
+        }
+        canvas {
+            position:fixed;
+            width:100%;
+            height:100%;
+        }
+        #fx {
+            z-index:1
+        }
+        video {
+            display:none;
+        }
+    </style>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="lib/seriously/seriously.js"></script>
+    <script type="text/javascript" src="lib/seriously/transforms/seriously.transform3d.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.accumulator.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.ascii.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.bleach-bypass.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.blend.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.brightness-contrast.js"></script>
+    
+    
+    <script type="text/javascript" src="lib/seriously/effects/seriously.edge.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.emboss.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.exposure.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.falsecolor.js"></script>
+    
+    <script type="text/javascript" src="lib/seriously/effects/seriously.kaleidoscope.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.lumakey.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.fader.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.filmgrain.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.blur.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.hue-saturation.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.hex.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.invert.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.directionblur.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.nightvision.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.noise.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.opticalflow.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.pixelate.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.polar.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.ripple.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.scanlines.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.sepia.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.sketch.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.throttle.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.tone.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.tvglitch.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.vibrance.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.vignette.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.split.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.gradientwipe.js"></script>
+    <script type="text/javascript" src="lib/seriously/effects/seriously.simplex.js"></script>
+
+    <script src="lib/clmtrackr.js"></script>
+    <script src="lib/model_pca_20_svm.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="lib/wave.js"></script>
+
+</head>
+<body>
+<video width="640" height="360" id="video"></video>
+<img id="cat" src="images/cats-q-c-640-480-5.jpg" style="display:none;"/>
+
+<canvas id="fx" width="640" height="360"></canvas>
+<canvas id="canvas" width="640" height="360" style="width:100%;height:100%;"></canvas>
+<canvas id="wave" width="640" height="360" style="width:100%;height:100%;"></canvas>
+<script>
+$(function(){
+    window.vis = new Visualizr();
+    var wave = new Wave(document.getElementById('wave'));
+    wave.start();
+})
+</script>
+</body>
+</html>
