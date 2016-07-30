@@ -3,10 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+
+    <script src="/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/lib/seriously/seriously.js"></script>
+    <script type="text/javascript" src="/lib/seriously/transforms/seriously.transform3d.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.accumulator.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.ascii.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.bleach-bypass.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.blend.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.brightness-contrast.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.checkerboard.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.chroma.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.color.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.colorcomplements.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.color-select.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.temperature.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.daltonize.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.dither.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.edge.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.emboss.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.exposure.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.falsecolor.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.freeze.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.highlights-shadows.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.kaleidoscope.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.lumakey.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.fader.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.filmgrain.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.blur.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.hue-saturation.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.hex.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.invert.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.directionblur.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.nightvision.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.noise.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.opticalflow.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.pixelate.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.polar.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.ripple.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.scanlines.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.sepia.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.sketch.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.throttle.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.tone.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.tvglitch.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.vibrance.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.vignette.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.split.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.gradientwipe.js"></script>
+    <script type="text/javascript" src="/lib/seriously/effects/seriously.simplex.js"></script>
 </head>
 <body>
+<video id="video"></video>
+<img id="cat" src="/images/cats-q-c-640-480-5.jpg" style="display:none;"/>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum tenetur eligendi minus consectetur, placeat temporibus dolor nemo facilis rem assumenda sit aspernatur eos deserunt iusto error harum totam. Molestias, architecto.
-    
+<canvas id="canvas" width="960" height="540" style="width:100%;height:100%;"></canvas>
+<script>
+$(function(){
+    var vis = new Visualizr();
+})
+</script>
 </body>
 </html>
