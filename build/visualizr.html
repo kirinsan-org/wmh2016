@@ -84,9 +84,13 @@
 
 <canvas id="fx" width="640" height="360"></canvas>
 <canvas id="canvas" width="640" height="360" style="width:100%;height:100%;"></canvas>
+<canvas id="wave" width="640" height="360" style="width:100%;height:100%;"></canvas>
+<script src="lib/wave.js"></script>
 <script>
 $(function(){
     var vis = new Visualizr();
+    var wave = new Wave(document.getElementById('wave'));
+    wave.start();
 })
 </script>
 </body>
