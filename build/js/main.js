@@ -19,7 +19,6 @@ var Visualizr = (function () {
         setInterval(function () {
             _this._points = _this._ctrack.getCurrentPosition();
             if (!!_this._points) {
-                console.log(_this._points[41]);
                 CTX.clearRect(0, 0, _this._fx.width, _this._fx.height);
                 CTX.beginPath();
                 CTX.strokeStyle = "#FFF";

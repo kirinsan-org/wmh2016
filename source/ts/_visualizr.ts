@@ -31,7 +31,7 @@ class Visualizr {
 
       if(!!this._points){
         //this.faceAngle = (this._points[41][0] - this._points[1][0])/(this._points[13][0] - this._points[1][0])-0.5;
-        console.log(this._points[41]);
+        // console.log(this._points[41]);
         CTX.clearRect(0,0,this._fx.width,this._fx.height)
         CTX.beginPath();
         CTX.strokeStyle = "#FFF";
