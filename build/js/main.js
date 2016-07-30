@@ -22,8 +22,8 @@ var Visualizr = (function () {
                 console.log(_this._points[41]);
                 CTX.clearRect(0, 0, _this._fx.width, _this._fx.height);
                 CTX.beginPath();
-                CTX.moveTo(0, 0);
-                CTX.lineTo(_this._points[41][0], _this._points[41][1]);
+                CTX.strokeStyle = "#FFF";
+                CTX.arc(_this._points[41][0], _this._points[41][1], 60, 0, Math.PI * 2, false);
                 CTX.stroke();
             }
         }, 100);
@@ -68,16 +68,26 @@ var Visualizr = (function () {
         SOURCE.width = 960;
         SOURCE.height = 540;
         SOURCE.mode = 'cover';
-        var NVG = SOL.effect('nightvision');
-        NVG.source = SOURCE;
         var ILLUST = SOL.effect('sketch');
-        var foo = true;
         ILLUST.source = SOURCE;
-        setInterval(function () {
-            target.source = foo ? ILLUST : NVG;
-            foo = !foo;
-        }, 1000);
-        target.source = ILLUST;
+        var OPF = SOL.effect('opticalflow');
+        OPF.source = SOURCE;
+        OPF.offset = 100;
+        var GLITCH = SOL.effect('tvglitch');
+        GLITCH.source = SOURCE;
+        GLITCH.lineSync = 0;
+        GLITCH.distortion = 0.025;
+        GLITCH.bars = 0.2;
+        var NVG = SOL.effect('nightvision');
+        NVG.source = GLITCH;
+        NVG.time = 10;
+        NVG.luminanceThreshold = 0.2;
+        var BLEND = SOL.effect('blend');
+        BLEND.top = NVG;
+        BLEND.bottom = OPF;
+        BLEND.opacity = 0.6;
+        BLEND.mode = "screen";
+        target.source = BLEND;
         SOL.go();
     };
     return Visualizr;
