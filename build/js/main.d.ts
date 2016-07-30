@@ -13,6 +13,10 @@ declare class Visualizr {
     private _ctrack;
     private _points;
     private faceAngle;
+    HUE: any;
+    note: number;
+    rms: number;
+    freq: number;
     constructor();
     startFx(): void;
     startSeriously(Seriously: any): void;

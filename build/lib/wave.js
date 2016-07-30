@@ -58,11 +58,12 @@ class Wave {
           analyser.getFloatTimeDomainData(data);
           self.draw(data);
           let rms = calcRms(data);
-
+          vis.rms = rms;
+          // console.log(vis.rms)
           /**
            * 音量
            */
-          // console.log(rms);
+          // // console.log(rms);
 
           if (rms < 0.05) {
             if (playing) {
@@ -74,7 +75,7 @@ class Wave {
                * 音がなくなった時
                */
               // $(this).trigger('noteOff');
-              console.log('note off')
+              // console.log('note off')
             }
             return
           };
@@ -86,11 +87,11 @@ class Wave {
              * 音を検出した時
              */
             // $(this).trigger('noteOn');
-            console.log('note on')
+            // console.log('note on')
 
           }
 
-          // console.log(rms)
+          // // console.log(rms)
 
 
           analyser.getFloatFrequencyData(data);
@@ -106,7 +107,8 @@ class Wave {
              * 周波数が変わった時
              */
             // $(this).trigger('frequencyChange', [freq]);
-            console.log('frequencyChange', [freq, prevFreq]);
+            // console.log('frequencyChange', [freq, prevFreq]);
+            vis.freq;
           }
 
           if (note !== prevNote) {
@@ -114,7 +116,9 @@ class Wave {
              * ノートナンバーが変わった時
              */
             // $(this).trigger('noteChange', [note, prevNote]);
-            console.log('noteChange', [note, prevNote]);
+            // console.log('noteChange', [note, prevNote] ,( note / 120 *2 -1) *2 ) ;
+            vis.note = note;
+            if(!!vis.HUE) vis.HUE.hue = ( note / 120 *2 -1) *3+0.2;
           }
 
           prevFreq = freq;

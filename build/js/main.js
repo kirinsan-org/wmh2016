@@ -6,6 +6,10 @@ var Visualizr = (function () {
         var _this = this;
         this._el = {};
         this._fx = $("#fx").get(0);
+        this.HUE = null;
+        this.note = 0;
+        this.rms = 0;
+        this.freq = 0;
         this.videoReadyHandle = $.Deferred();
         this.videoReady = this.videoReadyHandle.promise();
         this.startSeriously(Seriously);
@@ -22,10 +26,10 @@ var Visualizr = (function () {
                 CTX.clearRect(0, 0, _this._fx.width, _this._fx.height);
                 CTX.beginPath();
                 CTX.strokeStyle = "#FFF";
-                CTX.arc(_this._points[41][0], _this._points[41][1], 60, 0, Math.PI * 2, false);
+                CTX.arc(_this._points[41][0], _this._points[41][1], _this.rms * 200, 0, Math.PI * 2, false);
                 CTX.stroke();
             }
-        }, 100);
+        }, 20);
     };
     Visualizr.prototype.startSeriously = function (Seriously) {
         var _this = this;
@@ -58,7 +62,6 @@ var Visualizr = (function () {
                 resize();
             }
             _this._video.onloadedmetadata = _this._video.onplay = resize;
-            console.log(_this.videoReadyHandle);
             _this.videoReadyHandle.resolve();
             SOURCE.source = _this._video;
         }, function () {
@@ -81,8 +84,11 @@ var Visualizr = (function () {
         NVG.source = GLITCH;
         NVG.time = 10;
         NVG.luminanceThreshold = 0.2;
+        this.HUE = SOL.effect('hue-saturation');
+        this.HUE.source = NVG;
+        this.HUE.hue = 0;
         var BLEND = SOL.effect('blend');
-        BLEND.top = NVG;
+        BLEND.top = this.HUE;
         BLEND.bottom = OPF;
         BLEND.opacity = 0.6;
         BLEND.mode = "screen";
