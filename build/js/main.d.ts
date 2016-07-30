@@ -6,6 +6,14 @@ declare let _vt: {
 };
 declare class Visualizr {
     private _el;
+    private _fx;
+    private videoReady;
+    private videoReadyHandle;
+    private _video;
+    private _ctrack;
+    private _points;
+    private faceAngle;
     constructor();
+    startFx(): void;
     startSeriously(Seriously: any): void;
 }
